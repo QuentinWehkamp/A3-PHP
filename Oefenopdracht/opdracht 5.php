@@ -5,6 +5,12 @@ class User {
   private $Lastname;
   private $Birthdate;
 
+  public function __construct($Lastname, $Birthdate)
+  {
+    $this->Lastname = $Lastname;
+    $this->Birthdate = $Birthdate;
+  }
+
   public function setUser($name) {
     $this->User = $name;
   }
@@ -12,17 +18,9 @@ class User {
   public function getUser() {
     return $this->User;
   }
-
-  public function setLastname($Lastname) {
-    $this->Lastname = $Lastname;
-  }
-
+  
   public function getLastname() {
     return $this->Lastname;
-  }
-
-  public function setBirthdate($Birthdate) {
-    $this->Birthdate = $Birthdate;
   }
 
   public function getBirthdate() {
@@ -31,12 +29,9 @@ class User {
 }
 
 /* Reguliere procedurele code */
-$user = new User();
+$user = new User('Wehkamp ', '07-03-2002');
 $user->setUser('Quentin ');
-$user->setLastname('Wehkamp ');
-$user->setBirthdate('07-03-2002');
 
 echo $user->getUser();
 echo $user->getLastname();
 echo $user->getBirthdate();
-?>

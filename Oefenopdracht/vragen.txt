@@ -4,3 +4,11 @@
 	private zorgt ervoor dat data niet gewijzigd kan worden buiten de class.
 	protected is hetzelde als private maar het geld ook voor inheritance van een class.
 	public kan overal gewijzigd worden.
+6.
+	er word een html tabel gemaakt met php functies.
+8.
+	Wiel extends auto
+	arm extends mens
+	dop extends fles
+9.
+	
