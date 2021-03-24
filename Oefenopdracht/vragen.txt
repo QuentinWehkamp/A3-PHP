@@ -1,0 +1,6 @@
+1.
+	klassen zijn de eigenschappen van objecten
+3.
+	private zorgt ervoor dat data niet gewijzigd kan worden buiten de class.
+	protected is hetzelde als private maar het geld ook voor inheritance van een class.
+	public kan overal gewijzigd worden.
