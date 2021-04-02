@@ -31,7 +31,7 @@ class User {
 }
 
 /* Reguliere procedurele code */
-$user = new User();
+$user = new User("");
 $user->setUsername('Quentin ');
 $user->setLastname('Wehkamp ');
 $user->setBirthdate('07-03-2002');

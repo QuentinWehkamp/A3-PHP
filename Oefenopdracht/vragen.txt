@@ -11,4 +11,8 @@
 	arm extends mens
 	dop extends fles
 9.
-	
+	huis extends deur
+	muur extends fotolijst
+11.
+	als je iets moet bijhouden of als je een variable in verschillende klassen wil gebruiken.
+
