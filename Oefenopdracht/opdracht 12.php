@@ -4,12 +4,12 @@
     }
 ); 
 
-$user = new User('Joe ','mama ','12-11-1995');
+$User = new User("");
+$User->setUsername('Joe ');
+$User->setLastname('mama ');
+$User->setBirthdate('03-13-2012');
 
-$user->getUser();
-$user->getLastname();
-$user->getBirthdate();
-
-echo $user->getUser();
-echo $user->getLastname();
-echo $user->getBirthdate();
+echo "<br>";
+echo $User->getUsername();
+echo $User->getLastname();
+echo $User->getBirthdate();

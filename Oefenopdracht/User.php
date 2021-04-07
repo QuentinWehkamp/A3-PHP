@@ -5,11 +5,11 @@ class User {
   private $Lastname;
   private $Birthdate;
 
-  public function setUser($name) {
+  public function setUsername($name) {
     $this->User = $name;
   }
 
-  public function getUser() {
+  public function getUsername() {
     return $this->User;
   }
 
@@ -31,9 +31,12 @@ class User {
 }
 
 /* Reguliere procedurele code */
-$user = new User('Quentin ','Wehkamp ','07-03-2002');
+$User = new User("");
+$User->setUsername('Quentin ');
+$User->setLastname('Wehkamp ');
+$User->setBirthdate('07-03-2002');
 
-echo $user->getUser();
-echo $user->getLastname();
-echo $user->getBirthdate();
+echo $User->getUsername();
+echo $User->getLastname();
+echo $User->getBirthdate();
 ?>
