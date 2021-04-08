@@ -1,0 +1,7 @@
+aantekeningen eindopdracht 2
+
+session variable
+image list
+shuffle array
+card status met switch case
+kijk hoeveel kaarten open liggen om te beoordelen of de 2 kaarten goed zijn(array?)

@@ -9,5 +9,17 @@ class Huis {
     private $Plaats;
     private $grond;
     private $woz;
+
+    public function setKamers($Kamers){
+        if(is_numeric($this)){
+            $this->Kamers = $Kamers;
+        }
+    }
+    public function setToiletten($Toiletten){
+        if(is_numeric($this)){
+            $this->Toiletten = $Toiletten;
+        }
+    }
+    // constructor
 }
 ?>
