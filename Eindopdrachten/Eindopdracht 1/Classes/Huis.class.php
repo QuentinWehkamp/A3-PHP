@@ -10,29 +10,39 @@ class Huis {
     private int $grond;
     private int $woz;
 
-    public function __construct($Kamers, $Toiletten, $Verwarming, $Verwarming_soort, $Straatnaam, $Huisnummer, $Plaats, $grond, $woz)
+    public function __construct($Straatnaam, $Huisnummer, $Plaats)
     {
-        $this->Kamers = $Kamers;
-        $this->Toiletten = $Toiletten;
-        $this->Verwarming = $Verwarming;
-        $this->Verwarming_soort = $Verwarming_soort;
         $this->Straatnaam = $Straatnaam;
         $this->Huisnummer = $Huisnummer;
         $this->Plaats = $Plaats;
+    }
+
+    public function setKamers($Kamers){
+        $this->Kamers = $Kamers;
+    }
+
+    public function setToiletten($Toiletten){
+        $this->Toiletten = $Toiletten;
+    }
+
+    public function setVerwarming($Verwarming){
+        $this->Verwarming = $Verwarming;
+    }
+
+    public function setVerwarming_soort($Verwarming_soort){
+        $this->Verwarming_soort = $Verwarming_soort;
+    }
+
+    public function setGrond($grond){
         $this->grond = $grond;
+    }
+
+    public function setWOZ($woz){
         $this->woz = $woz;
     }
 
     public function getHuis(){
-        return $this->Kamers;
-        return $this->Toiletten;
-        return $this->Verwarming;
-        return $this->Verwarming_soort;
-        return $this->Straatnaam;
-        return $this->Huisnummer;
-        return $this->Plaats;
-        return $this->grond;
-        return $this->woz;
+        return array($this->Kamers, $this->Toiletten, $this->Verwarming, $this->Verwarming_soort, $this->Straatnaam, $this->Huisnummer, $this->Plaats, $this->grond, $this->woz);
     }
 }
 ?>
