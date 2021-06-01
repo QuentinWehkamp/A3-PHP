@@ -48,11 +48,8 @@ class Huis {
         for($e=0; $e<9; $e++){
             if(isset($this->elements[$e])){
                 $output .= $this->{$this->elements[$e]};
-                echo "\r\n";
             }
         }
         return $output;
     }
-    // return array($this->Kamers, $this->Toiletten, $this->Verwarming, $this->Verwarming_soort, $this->Straatnaam, $this->Huisnummer, $this->Plaats, $this->grond, $this->woz);
 }
-?>

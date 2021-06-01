@@ -12,5 +12,17 @@ $huis->setVerwarming_soort("gas");
 $huis->setGrond(300);
 $huis->setWOZ(300000);
 
-echo $huis->getHuis();
+echo $huis->getHuis(), "</br>";
+
+echo $Belasting->wozBelasting($woz);
+if (isset($woz)){
+    echo "<p1>WOZ Belasting: </p1>";
+    $Belasting->wozBelasting();
+}
+if (isset($Kamers)){
+    $Belasting->kamerBelasting();
+}
+if (isset($Plaats)){
+    $Belasting->plaatsBelasting();
+}
 ?>
