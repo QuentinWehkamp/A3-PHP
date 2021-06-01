@@ -10,6 +10,8 @@ class Huis {
     private int $grond;
     private int $woz;
 
+    private $elements = array("Kamers", "Toiletten", "Verwarming", "Verwarming_soort", "Straatnaam", "Huisnummer", "Plaats", "grond", "woz");
+
     public function __construct($Straatnaam, $Huisnummer, $Plaats)
     {
         $this->Straatnaam = $Straatnaam;
@@ -42,7 +44,15 @@ class Huis {
     }
 
     public function getHuis(){
-        return array($this->Kamers, $this->Toiletten, $this->Verwarming, $this->Verwarming_soort, $this->Straatnaam, $this->Huisnummer, $this->Plaats, $this->grond, $this->woz);
+        $output = "";
+        for($e=0; $e<9; $e++){
+            if(isset($this->elements[$e])){
+                $output .= $this->{$this->elements[$e]};
+                echo "\r\n";
+            }
+        }
+        return $output;
     }
+    // return array($this->Kamers, $this->Toiletten, $this->Verwarming, $this->Verwarming_soort, $this->Straatnaam, $this->Huisnummer, $this->Plaats, $this->grond, $this->woz);
 }
 ?>

@@ -2,15 +2,15 @@
 include 'Autoload.php';
 
 // Verplicht Straatnaam=STRING Huisnummer=INT Plaats=STRING
-$Huis = new Huis("Huislaan", 12, "Amsterdam");
+$huis = new Huis("Huislaan", 12, "Amsterdam");
 // Kamers=INT Toiletten=INT Verwarming=BOOL Verwarmingsoort=STRING 
 // grond=INT Woz=INT
-$Huis->setKamers(2);
-$Huis->setToiletten(2);
-$Huis->setVerwarming(1);
-$Huis->setVerwarming_soort("gas");
-$Huis->setGrond(300);
-$Huis->setWOZ(300000);
+$huis->setKamers(2);
+$huis->setToiletten(2);
+$huis->setVerwarming(1);
+$huis->setVerwarming_soort("gas");
+$huis->setGrond(300);
+$huis->setWOZ(300000);
 
-echo $Huis->getHuis();
+echo $huis->getHuis();
 ?>
