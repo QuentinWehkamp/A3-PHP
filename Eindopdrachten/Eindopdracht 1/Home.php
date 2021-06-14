@@ -14,6 +14,7 @@ $huis->setWOZ(300000);
 
 echo $huis->getHuis(), "</br>";
 
+echo $woz;
 echo $Belasting->wozBelasting($woz);
 if (isset($woz)){
     echo "<p1>WOZ Belasting: </p1>";

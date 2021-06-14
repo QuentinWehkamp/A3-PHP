@@ -7,7 +7,7 @@ class Belasting
     private int $plaatsBel;
     private int $totaalBel;
 
-    public function wozbelasting($woz)
+    public function wozBelasting($woz, $wozBel)
     {
         if ($woz < 100000) {
             $wozBel == 600;
@@ -19,7 +19,7 @@ class Belasting
         return $wozBel;
     }
 
-    public function kamerBelasting($Kamers)
+    public function kamerBelasting($Kamers, $kamerBel)
     {
         if ($Kamers == 1) {
             $kamerBel == 100;
@@ -30,7 +30,7 @@ class Belasting
         }
     }
 
-    public function plaatsBelasting($Plaats)
+    public function plaatsBelasting($Plaats, $plaatsBel)
     {
         if ($Plaats == "Amsterdam" || $Plaats == "Rotterdam" || $Plaats == "Groningen") {
             $plaatsBel == 1000;
@@ -39,7 +39,7 @@ class Belasting
         }
 
     }
-    public function getBelasting(){
+    public function getBelasting($wozBel, $kamerBel, $plaatsBel){
         $totaalBel = $wozBel + $kamerBel + $plaatsBel;
     }
 }
