@@ -1,15 +1,47 @@
 <?php
 
 class Card{
-    private $text;
+    private $image;
     private $id;
-    public function __construct($text, $id)
+    private $state = "closed";
+
+    public function __construct($image, $id)
     {
-        $this->text=$text;
+        $this->image=$image;
         $this->id=$id;
+    }
+
+    public function getState(){
+        return $this->state;
+    }
+
+    public function getImage(){
+        return $this->image;
+    }
+
+    public function isGuessed(){
+        $this->state = "guessed";
+    }
+
+    public function turn(){
+        if($this->state == "open"){
+            $this->state = "closed";
+        } else {
+            $this->state = "open";
+        }
     }
     public function __toString()
     {
-        return "<a href=\"?id=".$this->id."\"><img class=\"card\" src=\"images/".$this->text."\"></a>" ;
+        switch($this->state){
+            case "closed":
+                return "<a href=\"?id=".$this->id."\"><img class=\"card\" src=\"images/square.png\"></a>" ;
+                break;
+            case "open":
+                return "<img class=\"card\" src=\"images/".$this->image."\">" ;
+                break;
+            case "guessed":
+                return "<img class=\"card guessed\" src=\"images/".$this->image."\">" ;
+                break;
+        }
     }
 }

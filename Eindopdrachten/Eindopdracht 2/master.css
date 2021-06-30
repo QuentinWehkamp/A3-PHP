@@ -1,4 +1,14 @@
+body{
+    background-color: #2f5d50;
+}
 img.card{
     height: 100px;
     width: 100px;
+}
+#board{
+    margin: auto;
+    width: 400px;
+}
+.guessed{
+    background-color: rgba(0, 60, 255, 0.2);
 }

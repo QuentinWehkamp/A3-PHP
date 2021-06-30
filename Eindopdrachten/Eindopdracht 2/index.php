@@ -11,16 +11,17 @@
 </head>
 
 <body>
-    <?php
-    session_start();
-    include 'Autoload.php';
+    <div id="board">
+        <?php
+        include 'Autoload.php';
 
-    $spel = new Spel();
-    echo $spel;
-    ?>
+        $spel = new Spel();
+        echo $spel;
+        ?>
+        <a class="button" href="?new">nieuw</a>
 
-    <div id="table"></div>
+        
+    </div>
 </body>
-<script src="Display.js"></script>
 
 </html>
