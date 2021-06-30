@@ -9,6 +9,7 @@ class Huis {
     private string $Plaats;
     private int $grond;
     private int $woz;
+    private $belasting;
 
     private $elements = array("Kamers", "Toiletten", "Verwarming", "Verwarming_soort", "Straatnaam", "Huisnummer", "Plaats", "grond", "woz");
 
@@ -17,8 +18,12 @@ class Huis {
         $this->Straatnaam = $Straatnaam;
         $this->Huisnummer = $Huisnummer;
         $this->Plaats = $Plaats;
+        $this->belasting = new belasting($this);
     }
 
+    public function belasting(){
+        return $this->belasting;
+    }
     public function setKamers($Kamers){
         $this->Kamers = $Kamers;
     }
@@ -43,13 +48,31 @@ class Huis {
         $this->woz = $woz;
     }
 
-    public function getHuis(){
-        $output = "";
-        for($e=0; $e<9; $e++){
-            if(isset($this->elements[$e])){
-                $output .= $this->{$this->elements[$e]};
-            }
-        }
-        return $output;
+    public function getKamers(){
+        return $this->Kamers;
+    }
+    public function getToiletten(){
+        return $this->Toiletten;
+    }
+    public function getVerwarming(){
+        return $this->Verwarming;
+    }
+    public function getVerwarmingsoort(){
+        return $this->Verwarming_soort;
+    }
+    public function getPlaats(){
+        return $this->Plaats;
+    }
+    public function getStraatnaam(){
+        return $this->Straatnaam;
+    }
+    public function getHuisnummer(){
+        return $this->Huisnummer;
+    }
+    public function getGrond(){
+        return $this->grond;
+    }
+    public function getWoz(){
+        return $this->woz;
     }
 }

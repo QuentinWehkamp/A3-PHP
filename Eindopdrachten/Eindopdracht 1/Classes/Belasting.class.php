@@ -1,45 +1,50 @@
 <?php
 class Belasting
 {
-    // Bel == belasting
-    private int $wozBel;
-    private int $kamerBel;
-    private int $plaatsBel;
-    private int $totaalBel;
+    private $huis;
 
-    public function wozBelasting($woz, $wozBel)
+    public function __construct($huis)
     {
-        if ($woz < 100000) {
-            $wozBel == 600;
-        } elseif ($woz >= 100000 && $woz <= 200000) {
-            $wozBel == 2000;
-        } elseif ($woz > 200000) {
-            $wozBel == 6000;
+        $this->huis = $huis;
+    }
+    public function wozBelasting()
+    {
+        $wozBel = 0;
+        if ($this->huis->getWoz() < 100000) {
+            $wozBel = 600;
+        } elseif ($this->huis->getWoz() >= 100000 && $this->huis->getWoz() <= 200000) {
+            $wozBel = 2000;
+        } elseif ($this->huis->getWoz() > 200000) {
+            $wozBel = 6000;
         }
         return $wozBel;
     }
 
-    public function kamerBelasting($Kamers, $kamerBel)
+    public function kamerBelasting()
     {
-        if ($Kamers == 1) {
-            $kamerBel == 100;
-        } elseif ($Kamers == 2) {
-            $kamerBel == 300;
-        } elseif ($Kamers >= 3) {
-            $kamerBel == 800;
+        $kamerBel = 0;
+        if ($this->huis->getKamers() == 1) {
+            $kamerBel = 100;
+        } elseif ($this->huis->getKamers() == 2) {
+            $kamerBel = 300;
+        } elseif ($this->huis->getKamers() >= 3) {
+            $kamerBel = 800;
         }
+        return $kamerBel;
     }
 
-    public function plaatsBelasting($Plaats, $plaatsBel)
+    public function plaatsBelasting()
     {
-        if ($Plaats == "Amsterdam" || $Plaats == "Rotterdam" || $Plaats == "Groningen") {
-            $plaatsBel == 1000;
+        $plaatsBel = 0;
+        if ($this->huis->getPlaats() == "Amsterdam" || $this->huis->getPlaats() == "Rotterdam" || $this->huis->getPlaats() == "Groningen") {
+            $plaatsBel = 1000;
         } else {
-            $plaatsBel == 0;
+            $plaatsBel = 0;
         }
-
+        return $plaatsBel;
     }
-    public function getBelasting($wozBel, $kamerBel, $plaatsBel){
-        $totaalBel = $wozBel + $kamerBel + $plaatsBel;
+    public function getBelasting()
+    {
+       return $this->wozBelasting() + $this->kamerBelasting() + $this->plaatsBelasting();
     }
 }
