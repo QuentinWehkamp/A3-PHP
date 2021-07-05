@@ -18,8 +18,8 @@
         $spel = new Spel();
         echo $spel;
         ?>
-        <a class="button" href="?new">nieuw</a>
-
+        
+        <a class="button" href="?new">restart</a>
         
     </div>
 </body>

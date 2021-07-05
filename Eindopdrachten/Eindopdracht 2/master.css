@@ -1,14 +1,27 @@
 body{
-    background-color: #2f5d50;
+    background-color: #18206F;
 }
 img.card{
-    height: 100px;
-    width: 100px;
+    height: 120px;
+    width: 120px;
+    margin-right: 5px;
 }
 #board{
     margin: auto;
-    width: 400px;
+    width: 500px;
 }
 .guessed{
-    background-color: rgba(0, 60, 255, 0.2);
+    background-color: #D88373;
+}
+.button {
+    margin-top: 100px;
+    margin-left: 40%;
+    padding: .5em .5em;
+    font-family: helvetica;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-style: solid;
+    border-color: #17255A;
+    color:#17255A;
+    background-color: #F5E2C8;
 }
