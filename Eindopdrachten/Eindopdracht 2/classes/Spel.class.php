@@ -12,6 +12,7 @@ class Spel
         $this->save();
     }
 
+    // kijk of het spel al is gemaakt, als er geen sessie is word die gemaakt.
     private function load()
     {
         if (isset($_SESSION['cards']) && !isset($_GET['new'])) {
@@ -25,11 +26,13 @@ class Spel
         }
     }
 
+    // slaat de sessie op.
     private function save()
     {
         $_SESSION['cards'] = $this->cards;
     }
 
+    // opend of sluit de kaarten en kijkt of je goed hebt geraden.
     private function update()
     {
         if (isset($_GET['id'])) {
@@ -43,18 +46,9 @@ class Spel
         }
         switch (count($open)) {
             case 2:
-                $guessed = array();
                 if ($open[0]->getImage() == $open[1]->getImage()) {
                     $open[0]->isGuessed();
                     $open[1]->isGuessed();
-                    for ($i = 0; $i < count($this->cards); $i++) {
-                        if ($this->cards[$i]->getState() == "guessed") {
-                            array_push($guessed, $this->cards[$i]);
-                        }
-                    }
-                    if(count($guessed) == 15){
-                        $this->win();
-                    }
                 }
                 break;
             case 3:
@@ -63,13 +57,22 @@ class Spel
                         $open[$i]->turn();
                     }
                 }
+                break;
         }
     }
 
-    public function win(){
-        return "Je hebt gewonnen!";
+    // kijkt of je hebt gewonnen
+    public function isReady(){
+        $guessed = 0;
+        for ($i = 0; $i < count($this->cards); $i++) {
+            if ($this->cards[$i]->getState() == "guessed") {
+                $guessed++;
+            }
+        }
+        return $guessed == 16;
     }
 
+    // laat de kaarten zien
     public function __toString()
     {
         $output = "";

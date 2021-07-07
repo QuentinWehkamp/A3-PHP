@@ -9,13 +9,20 @@ img.card{
 #board{
     margin: auto;
     width: 500px;
+    height: 550px;
+    text-align: center;
+    font-size: 150%;
+    font-weight: bold;
+    color: #F5E2C8;
+}
+.closed{
+    background-color: #268b68;
 }
 .guessed{
-    background-color: #D88373;
+    background-color: #b40000;
 }
 .button {
-    margin-top: 100px;
-    margin-left: 40%;
+    margin-left: 46.5%;
     padding: .5em .5em;
     font-family: helvetica;
     text-decoration: none;

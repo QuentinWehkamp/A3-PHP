@@ -17,11 +17,14 @@
 
         $spel = new Spel();
         echo $spel;
+        if ($spel->isReady()) {
+            echo "Je hebt gewonnen!";
+        }
+
         ?>
-        
-        <a class="button" href="?new">restart</a>
-        
+
     </div>
+    <a class="button" href="?new">restart</a>
 </body>
 
 </html>
